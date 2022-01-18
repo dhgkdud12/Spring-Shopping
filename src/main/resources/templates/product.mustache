@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Spring 쇼핑몰</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1> Spring 쇼핑몰 </h1>
+
+    <button onClick="location.href='signup'">회원가입</button>
+    <button onClick="location.href='add.html'">제품 추가하기</button>
+    <br><br>
+
+{{#accessory}}
+    <tr>
+<!--        <td>{{id}} </td>-->
+<!--        <td>{{category}}</td> <br>-->
+        <td><img src = {{img}} width="150" height="150"> </td> <br>
+        <td>{{name}}</td> <br>
+        <td>사이즈: {{size}} </td> <br>
+        <td>{{price}}원</td> <br>
+    </tr>
+{{/accessory}}
+
+{{#top}}
+    <tr>
+<!--        <td>{{id}} </td>-->
+        <td>{{category}}</td> <br>
+        <td><img src = {{img}} width="150" height="150"> </td> <br>
+        <td>{{name}}</td> <br>
+        <td>사이즈: {{size}} </td> <br>
+        <td>{{price}}원</td> <br>
+    </tr>
+{{/top}}
+
+{{#bottom}}
+    <tr>
+<!--        <td>{{id}} </td>-->
+        <td>{{category}}</td> <br>
+        <td><img src = {{img}} width="150" height="150"> </td> <br>
+        <td>{{name}}</td> <br>
+        <td>사이즈: {{size}} </td> <br>
+        <td>{{price}}원</td> <br>
+    </tr>
+{{/bottom}}
+
+{{#shoes}}
+    <tr>
+<!--        <td>{{id}} </td>-->
+        <td>{{category}}</td> <br>
+        <td><img src = {{img}} width="150" height="150"> </td> <br>
+        <td>{{name}}</td> <br>
+        <td>사이즈: {{size}} </td> <br>
+        <td>{{price}}원</td> <br>
+    </tr>
+{{/shoes}}
+<br>
+주소: {{address}}
+
+</body>
+</html>

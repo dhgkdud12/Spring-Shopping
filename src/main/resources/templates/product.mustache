@@ -3,6 +3,11 @@
 <head>
     <title>Spring 쇼핑몰</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        div{
+            padding:10px;
+        }
+    </style>
 </head>
 <body>
     <h1> Spring 쇼핑몰 </h1>
@@ -12,50 +17,60 @@
     <br><br>
 
 {{#accessory}}
-    <tr>
-<!--        <td>{{id}} </td>-->
-<!--        <td>{{category}}</td> <br>-->
-        <td><img src = {{img}} width="150" height="150"> </td> <br>
-        <td>{{name}}</td> <br>
-        <td>사이즈: {{size}} </td> <br>
-        <td>{{price}}원</td> <br>
-    </tr>
+    <div style="float:left;">
+        <tr>
+            <!--        <td>{{id}} </td>-->
+            <!--        <td>{{category}}</td> <br>-->
+            <td><img src = {{img}} width="150" height="150"> </td> <br>
+            <td>{{name}}</td> <br>
+            <td>사이즈: {{size}} </td> <br>
+            <td>{{price}}원</td> <br>
+        </tr>
+    </div>
 {{/accessory}}
 
 {{#top}}
-    <tr>
-<!--        <td>{{id}} </td>-->
-        <td>{{category}}</td> <br>
-        <td><img src = {{img}} width="150" height="150"> </td> <br>
-        <td>{{name}}</td> <br>
-        <td>사이즈: {{size}} </td> <br>
-        <td>{{price}}원</td> <br>
-    </tr>
+    <div style="float:left;">
+        <tr>
+            <!--        <td>{{id}} </td>-->
+            <!--        <td>{{category}}</td> <br>-->
+            <td><img src = {{img}} width="150" height="150"> </td> <br>
+            <td>{{name}}</td> <br>
+            <td>사이즈: {{size}} </td> <br>
+            <td>{{price}}원</td> <br>
+        </tr>
+    </div>
 {{/top}}
 
 {{#bottom}}
-    <tr>
-<!--        <td>{{id}} </td>-->
-        <td>{{category}}</td> <br>
-        <td><img src = {{img}} width="150" height="150"> </td> <br>
-        <td>{{name}}</td> <br>
-        <td>사이즈: {{size}} </td> <br>
-        <td>{{price}}원</td> <br>
-    </tr>
+    <div style="float:left;">
+        <tr>
+            <!--        <td>{{id}} </td>-->
+            <!--        <td>{{category}}</td> <br>-->
+            <td><img src = {{img}} width="150" height="150"> </td> <br>
+            <td>{{name}}</td> <br>
+            <td>사이즈: {{size}} </td> <br>
+            <td>{{price}}원</td> <br>
+        </tr>
+    </div>
 {{/bottom}}
 
 {{#shoes}}
-    <tr>
-<!--        <td>{{id}} </td>-->
-        <td>{{category}}</td> <br>
-        <td><img src = {{img}} width="150" height="150"> </td> <br>
-        <td>{{name}}</td> <br>
-        <td>사이즈: {{size}} </td> <br>
-        <td>{{price}}원</td> <br>
-    </tr>
+    <div>
+        <tr>
+            <!--        <td>{{id}} </td>-->
+            <!--        <td>{{category}}</td> <br>-->
+            <td><img src = {{img}} width="150" height="150"> </td> <br>
+            <td>{{name}}</td> <br>
+            <td>사이즈: {{size}} </td> <br>
+            <td>{{price}}원</td> <br>
+        </tr>
+    </div>
 {{/shoes}}
 <br>
-주소: {{address}}
+<div>
+    주소: {{address}}
+</div>
 
 </body>
 </html>

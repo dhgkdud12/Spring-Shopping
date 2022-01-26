@@ -66,7 +66,7 @@ public class ProductController {
 
 
     @RequestMapping("/add_commit")
-    public String add_commit(@ModelAttribute Product product) { //reflction  기능
+    public String add_commit(@ModelAttribute Product product) {
         products.add(product);
         return "redirect:/product";
     }
@@ -74,6 +74,11 @@ public class ProductController {
     @RequestMapping("/signup")
     public String signup(){
         return "signup";
+    }
+
+    @RequestMapping("/signup_commit")
+    public String signup_commit() {
+        return "redirect:/product";
     }
 
 }

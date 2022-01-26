@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Product 테이블 생성</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1> Product 테이블 </h1>
+
+{{#accessory}}
+    <tr>
+        <!--        <td>{{id}} </td>-->
+        <!--        <td>{{category}}</td> <br>-->
+        <td><img src = {{img}} width="150" height="150"> </td> <br>
+        <td>{{name}}</td> <br>
+        <td>사이즈: {{size}} </td> <br>
+        <td>{{price}}원</td> <br>
+    </tr>
+{{/accessory}}
+
+{{#top}}
+    <tr>
+        <!--        <td>{{id}} </td>-->
+        <td>{{category}}</td> <br>
+        <td><img src = {{img}} width="150" height="150"> </td> <br>
+        <td>{{name}}</td> <br>
+        <td>사이즈: {{size}} </td> <br>
+        <td>{{price}}원</td> <br>
+    </tr>
+{{/top}}
+
+{{#bottom}}
+    <tr>
+        <!--        <td>{{id}} </td>-->
+        <td>{{category}}</td> <br>
+        <td><img src = {{img}} width="150" height="150"> </td> <br>
+        <td>{{name}}</td> <br>
+        <td>사이즈: {{size}} </td> <br>
+        <td>{{price}}원</td> <br>
+    </tr>
+{{/bottom}}
+
+{{#shoes}}
+    <tr>
+        <!--        <td>{{id}} </td>-->
+        <td>{{category}}</td> <br>
+        <td><img src = {{img}} width="150" height="150"> </td> <br>
+        <td>{{name}}</td> <br>
+        <td>사이즈: {{size}} </td> <br>
+        <td>{{price}}원</td> <br>
+    </tr>
+{{/shoes}}
+<br>
+주소: {{address}}
+
+</body>
+</html>

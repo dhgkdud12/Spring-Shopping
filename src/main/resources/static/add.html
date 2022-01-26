@@ -7,27 +7,57 @@
 <body>
 
 제품 추가하기<br>
-<form action ="/add_commit">
-    id <input type = "text" name="id" placeholder="id 입력하세요."><br>
-    category <select name="category">
+<form name="frmAdd">
+    id <input id = "id" type = "text" name="id" placeholder="id 입력하세요."><br>
+    category <select id="category" name="category">
     <option>accessory</option>
     <option>top</option>
     <option>bottom</option>
     <option>shoes</option>
 </select> <br>
-    img <input type="text " name="img" placeholder="image 파일"> <br>
-    name <input type="text" name="name" placeholder="상품명을 입력하세요."> <br>
-    size <select name="size">
+    img <input id="img" type="text " name="img" placeholder="image 파일"> <br>
+    name <input id="name" type="text" name="name" placeholder="상품명을 입력하세요."> <br>
+    size <select id="size" name="size">
     <option>S</option>
     <option>M</option>
     <option>L</option>
     <option>FREE</option>
 </select> <br>
-    price <input type="text" name="price" placeholder="가격을 입력하세요."> 원 <br><br>
-    <input type="submit" value="추가하기">
+    price <input id="price" type="text" name="price" placeholder="가격을 입력하세요."> 원 <br><br>
+    <input type="submit" onclick="addOnclick()" value="추가하기">
 </form>
+<script>
+    function addOnclick() {
+        const id = document.getElementById('id').value;
+        // const category = document.getElementById('category').value;
+        const img = document.getElementById('img').value;
+        const name = document.getElementById('name').value;
+        const size = document.getElementById('size').value;
+        const price = document.getElementById('price').value;
 
-<!--<a href="tel:101-3232-3232">전화걸기</a>-->
-<!--<a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%A0%9C%EC%A3%BC%EB%8F%84%EB%82%A0%EC%94%A8"></a>-->
-<!--제주도날씨-->
+        const theForm = document.frmAdd;
+
+        if (!id) {
+            alert('id을 입력하세요.');
+        }
+        else if(!img) {
+            alert('이미지주소를 입력하세요.');
+        }
+        else if(!name) {
+            alert('제품이름을 입력하세요.');
+        }
+        else if(!size) {
+            alert('사이즈를 입력하세요.');
+        }
+        else if(!price) {
+            alert('제품의 가격을 입력하세요.');
+        }
+        else {
+            alert('제품추가가 완료되었습니다.');
+            theForm.action = "add_commit";
+        }
+
+
+    }
+</script>
 </body>

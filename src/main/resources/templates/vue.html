@@ -4,83 +4,56 @@
   <meta charset="UTF-8">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js" ></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <title>Spring 쇼핑몰</title>
+
 </head>
 
 <body>
 
-<h1> Spring 쇼핑몰 </h1>
+<div id="app1">
+  영화목록 {{title}}
 
-<button onClick="location.href='signup'">회원가입</button>
-<button onClick="location.href='add.html'">제품 추가하기</button>
-<br><br>
-{{#accessory}}
-<tr>
-  <!--        <td>{{id}} </td>-->
-  <!--        <td>{{category}}</td> <br>-->
-  <td><img src = {{img}} width="150" height="150"> </td> <br>
-  <td>{{name}}</td> <br>
-  <td>사이즈: {{size}} </td> <br>
-  <td>{{price}}원</td> <br>
-</tr>
-{{/accessory}}
+  <div v-for="l in list " >
+    data  {{l}} <br>
+  </div>
 
-{{#top}}
-<tr>
-  <!--        <td>{{id}} </td>-->
-  <td>{{category}}</td> <br>
-  <td><img src = {{img}} width="150" height="150"> </td> <br>
-  <td>{{name}}</td> <br>
-  <td>사이즈: {{size}} </td> <br>
-  <td>{{price}}원</td> <br>
-</tr>
-{{/top}}
 
-{{#bottom}}
-<tr>
-  <!--        <td>{{id}} </td>-->
-  <td>{{category}}</td> <br>
-  <td><img src = {{img}} width="150" height="150"> </td> <br>
-  <td>{{name}}</td> <br>
-  <td>사이즈: {{size}} </td> <br>
-  <td>{{price}}원</td> <br>
-</tr>
-{{/bottom}}
+  <div v-for="m in movies " >
+    id= {{m.id}}   /  title = {{m.title}} <br>
+  </div>
 
-{{#shoes}}
-<tr>
-  <!--        <td>{{id}} </td>-->
-  <td>{{category}}</td> <br>
-  <td><img src = {{img}} width="150" height="150"> </td> <br>
-  <td>{{name}}</td> <br>
-  <td>사이즈: {{size}} </td> <br>
-  <td>{{price}}원</td> <br>
-</tr>
-{{/shoes}}
-<br>
-주소: {{address}}
+  <table border="1">
+    <tr v-for="m in movies " >
+      <td>   {{m.id}}  </td>
+      <td>   {{m.title}}  </td>
+    </tr>
+  </table>
+
+  <br>
+  주소 {{address}}
 
 </div>
 
 </body>
 
 <script>
-      new Vue({
-        el: '#app1',
-        data: {
-            title : "영화검색",
-            address : "경기도 용인시...",
-        },
-        created() {
-<!--          alert('^^');-->
-          axios.get('/getmovies')
-            .then(response =>{
-                      console.log(response.data)
-                      this.movies = response.data.movies;
-                });
+  new Vue({
+    el: '#app1',
+    data: {
+      title : "영화검색",
+      address : "경기도 용인시...",
+      list : ["사과", "배", "감"],
+      movies : []
+    },
+    created() {
+      alert('^^');
+      axios.get('/getmovies')
+              .then(response =>{
+                console.log(response.data)
+                this.movies = response.data.movies;
+              });
 
-        }
-      });
+    }
+  });
 </script>
 
 </html>

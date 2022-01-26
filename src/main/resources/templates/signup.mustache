@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
 <h1>회원가입</h1>
+<form name="frmSignup">
+    이름 <input id="name" type = "text" name="name" placeholder="이름을 입력하세요."><br>
+    생년월일 <input id="date" type = "date" name="birth"><br>
+    전화번호 <input id="number" type = "tel" name="number" placeholder="전화번호를 입력하세요."><br>
+    아이디 <input id="id" type = "text" name="id" placeholder="아이디를 입력하세요."><br>
+    비밀번호 <input id="password" type = "password" name="password" placeholder="비밀번호를 입력하세요."><br>
+    <br>
+    <input type="submit" onclick="signUpOnclick()" value="회원가입">
+</form>
+<script>
+    function signUpOnclick() {
+        const name = document.getElementById('name').value;
+        const date = document.getElementById('date').value;
+        const number = document.getElementById('number').value;
+        const id = document.getElementById('id').value;
+        const password = document.getElementById('password').value;
+
+        const theForm = document.frmSignup;
+
+        if (!name) {
+            alert('이름을 입력하세요.');
+        }
+        else if(!date) {
+            alert('생년월일을 입력하세요.');
+        }
+        else if(!number) {
+            alert('전화번호를 입력하세요.');
+        }
+        else if(!id) {
+            alert('아이디를 입력하세요.');
+        }
+        else if(!password) {
+            alert('비밀번호를 입력하세요.');
+        }
+        else {
+            alert('회원가입이 완료되었습니다.');
+            theForm.action = "signup_commit";
+        }
+
+
+    }
+</script>
+</body>

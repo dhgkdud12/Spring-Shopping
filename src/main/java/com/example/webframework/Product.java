@@ -14,4 +14,9 @@ public class Product {
     private String name;
     private String size;
     private int price;
+
+    public Product(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

@@ -21,6 +21,28 @@ public class APIController {
     }
 
 
+    @RequestMapping("/api")
+    public String api() {
+        Product p = new Product(1, "모자");
+        return p.toString();
+    }
+
+    @RequestMapping("/api2")
+    public Product api2() {
+        Product p = new Product(1, "모자");
+        return p;
+    }
+
+    @RequestMapping("/api3")
+    public Map api3() {
+
+        Map<Integer, String > map= new HashMap();
+        map.put(1, "모자");
+        map.put(2, "안경");
+        return  map;
+    }
+
+
     @RequestMapping("/getproducts")
     public Map getmovie() {
         Map<String, Object > map= new HashMap();

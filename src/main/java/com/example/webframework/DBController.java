@@ -12,6 +12,7 @@ import java.util.Map;
 @RestController
 public class DBController {
 
+    // Jdbc 연동 annotation
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -24,10 +25,12 @@ public class DBController {
         String sql = "DROP TABLE IF EXISTS product; CREATE TABLE product ( id INT auto_increment,  category VARCHAR(50), img VARCHAR(50), name VARCHAR(50), size VARCHAR(50), price INT(10))";
 
         jdbcTemplate.execute(sql);
+        // sql 실행
 
         jdbcTemplate.update("INSERT INTO product (id, category, name) values(1,'accessory', '모자')");
         jdbcTemplate.update("INSERT INTO product (id, category, name) values(2,'accessory', '안경')");
         jdbcTemplate.update("INSERT INTO product (id, category, name) values(3,'top', '티셔츠')");
+        // 항목 추가
 
         List<Product> all =
                 jdbcTemplate.query("select * from product",
@@ -35,6 +38,7 @@ public class DBController {
                                 rs.getInt("id"),
                                 rs.getString("name"))
                 );
+        // 테이블 출력
 
         List<Map<String,Object>> results = jdbcTemplate.queryForList("select * from product");
         for (Map m : results) {

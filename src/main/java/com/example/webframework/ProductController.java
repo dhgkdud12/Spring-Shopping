@@ -16,12 +16,12 @@ public class ProductController {
     private List<Product> products = new ArrayList<>();
 
     public ProductController() {
-        products.add(new Product(1,"accessory","hat.jpg","모자","FREE",10000));
-        products.add(new Product(2,"accessory","glasses.jpg","안경","FREE",5000));
+        products.add(new Product(1,"item","hat.jpg","모자","FREE",10000));
+        products.add(new Product(2,"item","glasses.jpg","안경","FREE",5000));
 
         products.add(new Product(3,"top","T-shirts.jpg","티셔츠","FREE",20000));
 
-        products.add(new Product(4,"bottom","pants.jpg","청바지","FREE",30000));
+        products.add(new Product(4,"bottom","pants.jpg","바지","FREE",30000));
 
         products.add(new Product(5,"shoes","shoes.jpg","슬리퍼","240",40000));
     }
@@ -31,10 +31,10 @@ public class ProductController {
 //        model.addAttribute("title","강남대1호점");
         model.addAttribute("address","경기도 용인시");
 
-        List<Product> accessory = new ArrayList<>();
+        List<Product> item = new ArrayList<>();
         for(Product product:products){
-            if(product.getCategory().equals("accessory"))
-                accessory.add(product);
+            if(product.getCategory().equals("item"))
+                item.add(product);
         }
         List<Product> top = new ArrayList<>();
         for(Product product:products){
@@ -55,7 +55,7 @@ public class ProductController {
         }
 
 
-        model.addAttribute("accessory", accessory);
+        model.addAttribute("item", item);
         model.addAttribute("top", top);
         model.addAttribute("bottom", bottom);
         model.addAttribute("shoes", shoes);
@@ -64,6 +64,11 @@ public class ProductController {
 
     }
 
+
+    @RequestMapping("/add")
+    public String add(){
+        return "add";
+    }
 
     @RequestMapping("/add_commit")
     public String add_commit(@ModelAttribute Product product) {

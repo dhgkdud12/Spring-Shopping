@@ -3,34 +3,65 @@
 <head>
     <title>Spring 쇼핑몰</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         div{
-            padding:10px;
+                padding:10px;
+            }
+
+        .nav-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: darkgray;
+            list-style-type: none;
         }
-    </style>
-</head>
-<body>
+
+        .nav-item {
+            padding: 15px;
+            cursor: pointer;
+        }
+        .nav-item a {
+            text-align: center;
+            text-decoration: none;
+            color: white;
+        }
+        </style>
+        </head>
+    <body>
     <h1> Spring 쇼핑몰 </h1>
 
     <button onClick="location.href='signup'">회원가입</button>
-    <button onClick="location.href='add.html'">제품 추가하기</button>
+    <button onClick="location.href='add'">제품 추가하기</button>
     <br><br>
-
-{{#accessory}}
-    <div style="float:left;">
-        <tr>
-            <!--        <td>{{id}} </td>-->
-            <!--        <td>{{category}}</td> <br>-->
-            <td><img src = {{img}} width="150" height="150"> </td> <br>
-            <td>{{name}}</td> <br>
-            <td>사이즈: {{size}} </td> <br>
-            <td>{{price}}원</td> <br>
+    <nav>
+        <ul class="nav-container">
+            <li class="nav-item"> <a href="#item">패션아이템</a> </li>
+            <li class="nav-item"> <a href="#top">상의</a> </li>
+            <li class="nav-item"> <a href="#bottom">하의</a> </li>
+            <li class="nav-item"> <a href="#shoes">신발</a> </li>
+        </ul>
+    </nav>
+    <br><br>
+    {{#item}}
+        <div style="float:left;" id ="item" >
+            <tr>
+                <!--        <td>{{id}} </td>-->
+                <!--        <td>{{category}}</td> <br>-->
+                <td><img src = {{img}} width="150" height="150"> </td> <br>
+                <td>{{name}}</td> <br>
+                <td>사이즈: {{size}} </td> <br>
+                <td>{{price}}원</td><br>
+                <button onclick="buyOnclick()">구매하기</button>
+                <button onclick="cartOnclick()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button><br>
         </tr>
     </div>
-{{/accessory}}
+{{/item}}
 
 {{#top}}
-    <div style="float:left;">
+    <div style="float:left;" id ="top">
         <tr>
             <!--        <td>{{id}} </td>-->
             <!--        <td>{{category}}</td> <br>-->
@@ -38,12 +69,14 @@
             <td>{{name}}</td> <br>
             <td>사이즈: {{size}} </td> <br>
             <td>{{price}}원</td> <br>
+            <button onclick="buyOnclick()">구매하기</button>
+            <button onclick="cartOnclick()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button><br>
         </tr>
     </div>
 {{/top}}
 
 {{#bottom}}
-    <div style="float:left;">
+    <div style="float:left;" id ="bottom">
         <tr>
             <!--        <td>{{id}} </td>-->
             <!--        <td>{{category}}</td> <br>-->
@@ -51,12 +84,14 @@
             <td>{{name}}</td> <br>
             <td>사이즈: {{size}} </td> <br>
             <td>{{price}}원</td> <br>
+            <button onclick="buyOnclick()">구매하기</button>
+            <button onclick="cartOnclick()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button><br>
         </tr>
     </div>
 {{/bottom}}
 
 {{#shoes}}
-    <div>
+    <div id ="shoes">
         <tr>
             <!--        <td>{{id}} </td>-->
             <!--        <td>{{category}}</td> <br>-->
@@ -64,6 +99,8 @@
             <td>{{name}}</td> <br>
             <td>사이즈: {{size}} </td> <br>
             <td>{{price}}원</td> <br>
+            <button onclick="buyOnclick()">구매하기</button>
+            <button onclick="cartOnclick()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button><br>
         </tr>
     </div>
 {{/shoes}}
@@ -71,6 +108,15 @@
 <div>
     주소: {{address}}
 </div>
+    <script>
 
+        function buyOnclick() {
+            alert('해당 제품 구매가 완료되었습니다.');
+        }
+
+        function cartOnclick() {
+            alert('해당 제품이 장바구니에 담겼습니다!');
+        }
+    </script>
 </body>
 </html>
